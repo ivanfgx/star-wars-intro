@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "univers-ultra-condensed";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/univers-ultra-condensed/univers-ultra-condensed.ttf") format("truetype"); }
+
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0;
+  background-color: #111;
+  padding-bottom: 5%; }
+
+.main {
+  position: relative;
+  height: 100%; }
+
+.scene {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  left: 1.5rem;
+  height: 100%; }
+
+.starry-sky-svg-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("../img/starry-sky-back.svg");
+  background-repeat: repeat;
+  opacity: 0;
+  -webkit-animation: shadowin 2s 8s cubic-bezier(0.4, 0, 1, 1) forwards;
+          animation: shadowin 2s 8s cubic-bezier(0.4, 0, 1, 1) forwards; }
+
+.starry-sky-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  -webkit-animation: shadowin 2s 10s cubic-bezier(0.4, 0, 1, 1) forwards;
+          animation: shadowin 2s 10s cubic-bezier(0.4, 0, 1, 1) forwards; }
+
+.starry-sky-svg circle {
+  opacity: 0.4; }
+
+.starry-sky-svg circle.blink {
+  -webkit-animation: blink 150ms linear alternate-reverse;
+          animation: blink 150ms linear alternate-reverse; }
+
+.scene-again {
+  visibility: hidden;
+  -webkit-animation: shadowin 3s 62s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: shadowin 3s 62s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.run-again {
+  -webkit-transition: border-color 300ms ease;
+  transition: border-color 300ms ease;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 3px solid white;
+  border-radius: 2px;
+  background-color: transparent;
+  font-family: "univers-ultra-condensed", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  cursor: pointer; }
+  .run-again:hover {
+    border-color: #FFE333; }
+  .run-again:focus {
+    outline: none; }
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+
+.center {
+  width: 100%;
+  text-align: center;
+  font-size: 0; }
+
+.text-center {
+  text-align: center; }
+
+@-webkit-keyframes shadowin {
+  to {
+    opacity: 1;
+    visibility: visible; } }
+
+@keyframes shadowin {
+  to {
+    opacity: 1;
+    visibility: visible; } }
+
+@-webkit-keyframes shadowout {
+  to {
+    opacity: 0; } }
+
+@keyframes shadowout {
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes shrink {
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0); } }
+
+@keyframes shrink {
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0); } }
+
+@-webkit-keyframes draw {
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0px; } }
+
+@keyframes draw {
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0px; } }
+
+@-webkit-keyframes crawl {
+  to {
+    -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, -10000px, 0);
+            transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, -10000px, 0); } }
+
+@keyframes crawl {
+  to {
+    -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, -10000px, 0);
+            transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, -10000px, 0); } }
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 0.8; } }
+
+@keyframes blink {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 0.8; } }
+
+.star-wars-paths .st {
+  stroke-dasharray: 3064px;
+  stroke-dashoffset: 3064px;
+  -webkit-animation: draw 4s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 4s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .a {
+  stroke-dasharray: 1440px;
+  stroke-dashoffset: 1440px;
+  -webkit-animation: draw 1.8799s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 1.8799s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .a-in {
+  stroke-dasharray: 345px;
+  stroke-dashoffset: 345px;
+  -webkit-animation: draw 0.45039s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 0.45039s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .r {
+  stroke-dasharray: 1920px;
+  stroke-dashoffset: 1920px;
+  -webkit-animation: draw 2.50653s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 2.50653s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .r-in {
+  stroke-dasharray: 331px;
+  stroke-dashoffset: 331px;
+  -webkit-animation: draw 0.43211s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 0.43211s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .w {
+  stroke-dasharray: 2229px;
+  stroke-dashoffset: 2229px;
+  -webkit-animation: draw 2.90992s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 2.90992s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .a-2 {
+  stroke-dasharray: 1440px;
+  stroke-dashoffset: 1440px;
+  -webkit-animation: draw 1.8799s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 1.8799s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .a-in-2 {
+  stroke-dasharray: 345px;
+  stroke-dashoffset: 345px;
+  -webkit-animation: draw 0.45039s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 0.45039s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .rs {
+  stroke-dasharray: 3132px;
+  stroke-dashoffset: 3132px;
+  -webkit-animation: draw 4.08877s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 4.08877s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths .r-in-2 {
+  stroke-dasharray: 331px;
+  stroke-dashoffset: 331px;
+  -webkit-animation: draw 0.43211s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: draw 0.43211s 10s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.star-wars-paths path {
+  opacity: 0; }
+
+.star-wars-svg {
+  width: 100%; }
+
+.sw-logo-container {
+  display: inline-block;
+  width: 600px;
+  max-width: 100%;
+  font-size: 0; }
+
+.star-wars-paths path.reset {
+  stroke-dasharray: initial; }
+
+.scene-logo {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  will-change: transform;
+  -webkit-animation: shrink 16s 14.5s cubic-bezier(0, 0, 0.17, 1) forwards;
+          animation: shrink 16s 14.5s cubic-bezier(0, 0, 0.17, 1) forwards; }
+
+.scene-logo-inner {
+  -webkit-animation: shadowout 3s 20s linear forwards;
+          animation: shadowout 3s 20s linear forwards;
+  opacity: 1; }
+
+.scene-long-time {
+  color: #49DBD8;
+  font-family: "franklin-gothic-urw";
+  font-size: 46px;
+  font-weight: 100;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  -webkit-animation: shadowin 1s 2s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: shadowin 1s 2s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+
+.scene-long-time-inner {
+  -webkit-animation: shadowout 1s 7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+          animation: shadowout 1s 7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  opacity: 1; }
+
+.longtime-svg-container {
+  display: inline-block;
+  width: 600px;
+  max-width: 100%;
+  font-size: 0; }
+
+.crawl-wrapper {
+  width: 90%;
+  text-align: justify;
+  margin: 0 auto; }
+
+.crawl-text-svg {
+  width: 100%; }
+
+.crawl-text-svg {
+  opacity: 0;
+  -webkit-animation: shadowin 1s 19s cubic-bezier(0.4, 0, 1, 1) forwards;
+          animation: shadowin 1s 19s cubic-bezier(0.4, 0, 1, 1) forwards; }
+
+.scene-crawl {
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, 1000px, 0);
+          transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, 1000px, 0);
+  -webkit-animation: crawl 100s 18s linear forwards;
+          animation: crawl 100s 18s linear forwards; }
+
+.scene-crawl-inner {
+  opacity: 1;
+  -webkit-animation: shadowout 10s 48s cubic-bezier(0.4, 0, 1, 1) forwards;
+          animation: shadowout 10s 48s cubic-bezier(0.4, 0, 1, 1) forwards; }
+
+/*# sourceMappingURL=styles.css.map */

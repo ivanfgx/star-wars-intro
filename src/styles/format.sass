@@ -1,0 +1,116 @@
+$longtime-color: #49DBD8
+$crawl-color: #FFE333
+$sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1)
+$acc-curve: cubic-bezier(0.4, 0.0, 1, 1)
+
++font-face("univers-ultra-condensed", "/assets/fonts/univers-ultra-condensed/univers-ultra-condensed", $file-formats: ttf);
+
+*, *:after, *:before
+  box-sizing: border-box
+
+html, body
+  height: 100%
+  overflow: hidden
+
+body
+  margin: 0
+  background-color: #111
+  padding-bottom: 5%
+
+.main
+  position: relative
+  height: 100%
+
+.scene
+  +position(absolute, 0 1.5rem null 1.5rem)
+  height: 100%
+
+.starry-sky-svg-back
+  +position(absolute, 0)
+  background-image: url("../img/starry-sky-back.svg")
+  background-repeat: repeat
+  opacity: 0
+  animation: shadowin 2s 8s $acc-curve forwards
+
+.starry-sky-svg
+  +position(absolute, 0)
+  width: 100%
+  min-height: 100%
+  opacity: 0
+  animation: shadowin 2s 10s $acc-curve forwards
+
+.starry-sky-svg circle
+  opacity: 0.4
+
+.starry-sky-svg circle.blink
+  animation: blink 150ms linear alternate-reverse
+
+.scene-again
+  visibility: hidden
+  animation: shadowin 3s 62s $sharp-curve forwards
+
+.run-again
+  transition: border-color 300ms ease
+  appearance: none
+  border: 3px solid white
+  border-radius: 2px
+  background-color: transparent
+  font-family: "univers-ultra-condensed", sans-serif
+  font-weight: bold
+  font-size: 1rem
+  color: white
+  padding: 0.8rem 1.2rem
+  text-transform: uppercase
+  text-decoration: none
+  letter-spacing: 0.08em
+  cursor: pointer
+  &:hover
+    border-color: $crawl-color
+  &:focus
+    outline: none
+
+// Util
+
+.flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+
+.center
+  width: 100%
+  text-align: center
+  font-size: 0
+
+.text-center
+  text-align: center
+
+// Animations
+
+@keyframes shadowin
+  to
+    opacity: 1
+    visibility: visible
+
+@keyframes shadowout
+  to
+    opacity: 0
+
+@keyframes shrink
+  to
+    transform: scale(0)
+
+@keyframes draw
+  to
+    opacity: 1
+    stroke-dashoffset: 0px
+
+@keyframes crawl
+  to
+    transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, -10000px, 0)
+
+@keyframes blink
+  from
+    opacity: 0.4
+  to
+    opacity: 0.8

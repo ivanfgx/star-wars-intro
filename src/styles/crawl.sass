@@ -1,0 +1,20 @@
+.crawl-wrapper
+  width: 90%
+  text-align: justify
+  margin: 0 auto
+
+.crawl-text-svg
+  width: 100%
+
+.crawl-text-svg
+  opacity: 0
+  animation: shadowin 1s 19s $acc-curve forwards
+
+.scene-crawl
+  transform-origin: center bottom
+  transform: perspective(1000px) rotate3d(1, 0, 0, 52deg) translate3d(0, 1000px, 0)
+  animation: crawl 100s 18s linear forwards
+
+.scene-crawl-inner
+  opacity: 1
+  animation: shadowout 10s 48s $acc-curve forwards

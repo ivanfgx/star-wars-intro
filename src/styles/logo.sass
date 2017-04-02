@@ -1,0 +1,60 @@
+// -- Paths info --
+// name    length
+// ST      3064px
+// A       1440px    
+// A-IN    345px
+// R       1920px
+// R-IN    331px
+// W       2229px
+// A-2     1440px
+// A-IN-2  345px
+// RS      3132px
+// R-IN-2  331px
+
+$paths_names: "st", "a", "a-in", "r", "r-in", "w", "a-2", "a-in-2", "rs", "r-in-2"
+$paths_lengths: 3064px, 1440px, 345px, 1920px, 331px, 2229px, 1440px, 345px, 3132px, 331px
+
+@for $n from 1 to length($paths_names)+1
+  $vel: 4s * nth($paths_lengths, $n)/nth($paths_lengths, 1)
+  .star-wars-paths .#{nth($paths_names, $n)}
+    stroke-dasharray: nth($paths_lengths, $n)
+    stroke-dashoffset: nth($paths_lengths, $n)
+    animation: draw #{$vel} 10s $sharp-curve forwards
+
+.star-wars-paths path
+  opacity: 0
+
+.star-wars-svg
+  width: 100%
+
+.sw-logo-container
+  display: inline-block
+  width: 600px
+  max-width: 100%
+  font-size: 0
+
+.star-wars-paths path.reset
+  stroke-dasharray: initial
+
+.scene-logo
+  transform: scale(1)
+  will-change: transform
+  animation: shrink 16s 14.5s cubic-bezier(0, 0, 0.17, 1) forwards
+
+.scene-logo-inner
+  animation: shadowout 3s 20s linear forwards
+  opacity: 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
